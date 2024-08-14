@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourist Places in India</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 30%;
+        transition: transform 0.2s ease;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #333;
+      }
+
+      .card p {
+        font-size: 1em;
+        color: #666;
+        margin: 15px 0;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          width: 48%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" data-place="Taj Mahal">
+        <img src="image1.jpg" alt="Taj Mahal in Agra, Uttar Pradesh" />
+        <h2>Taj Mahal</h2>
+        <p>Agra, Uttar Pradesh</p>
+      </div>
+      <div class="card" data-place="Qutub Minar">
+        <img src="image2.jpg" alt="Qutub Minar in Delhi" />
+        <h2>Qutub Minar</h2>
+        <p>Delhi</p>
+      </div>
+      <div class="card" data-place="Gateway of India">
+        <img src="image3.jpg" alt="Gateway of India in Mumbai, Maharashtra" />
+        <h2>Gateway of India</h2>
+        <p>Mumbai, Maharashtra</p>
+      </div>
+      <div class="card" data-place="Hawa Mahal">
+        <img src="image4.jpg" alt="Hawa Mahal in Jaipur, Rajasthan" />
+        <h2>Hawa Mahal</h2>
+        <p>Jaipur, Rajasthan</p>
+      </div>
+      <div class="card" data-place="Mysore Palace">
+        <img src="image5.jpg" alt="Mysore Palace in Mysore, Karnataka" />
+        <h2>Mysore Palace</h2>
+        <p>Mysore, Karnataka</p>
+      </div>
+      <div class="card" data-place="Charminar">
+        <img src="image6.jpg" alt="Charminar in Hyderabad, Telangana" />
+        <h2>Charminar</h2>
+        <p>Hyderabad, Telangana</p>
+      </div>
+      <div class="card" data-place="Victoria Memorial">
+        <img src="image7.jpg" alt="Victoria Memorial in Kolkata, West Bengal" />
+        <h2>Victoria Memorial</h2>
+        <p>Kolkata, West Bengal</p>
+      </div>
+      <div class="card" data-place="Red Fort">
+        <img src="image8.jpg" alt="Red Fort in Delhi" />
+        <h2>Red Fort</h2>
+        <p>Delhi</p>
+      </div>
+      <div class="card" data-place="Meenakshi Temple">
+        <img src="image9.jpg" alt="Meenakshi Temple in Madurai, Tamil Nadu" />
+        <h2>Meenakshi Temple</h2>
+        <p>Madurai, Tamil Nadu</p>
+      </div>
+      <div class="card" data-place="Golden Temple">
+        <img src="image10.jpg" alt="Golden Temple in Amritsar, Punjab" />
+        <h2>Golden Temple</h2>
+        <p>Amritsar, Punjab</p>
+      </div>
+      <div class="card" data-place="Lotus Temple">
+        <img src="image11.jpg" alt="Lotus Temple in Delhi" />
+        <h2>Lotus Temple</h2>
+        <p>Delhi</p>
+      </div>
+      <div class="card" data-place="Ajanta Caves">
+        <img src="image12.jpg" alt="Ajanta Caves in Aurangabad, Maharashtra" />
+        <h2>Ajanta Caves</h2>
+        <p>Aurangabad, Maharashtra</p>
+      </div>
+    </div>
+    
+    <script>
+      document.querySelectorAll(".card").forEach((card) => {
+        card.addEventListener("click", () => {
+          const place = card.getAttribute("data-place");
+          window.location.href = `secondpage.html?place=${place}`;
+        });
+      });
+    </script>
+  </body>
+</html>

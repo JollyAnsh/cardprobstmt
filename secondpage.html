@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourist Place Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .content {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .content img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .content h2 {
+      margin: 0;
+      font-size: 2em;
+      color: #333;
+    }
+
+    .content p {
+      font-size: 1.2em;
+      color: #666;
+      margin: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      .content p {
+        font-size: 1.1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content p {
+        font-size: 1em;
+      }
+
+      .content img {
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <img id="place-image" src="" alt="Image of the selected tourist place" />
+    <h2 id="place-name"></h2>
+    <p id="place-description"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const place = params.get("place");
+
+    const placeDetails = {
+      "Taj Mahal": {
+        image: "image1.jpg",
+        description: "The Taj Mahal, located in Agra, is a UNESCO World Heritage Site and one of the New Seven Wonders of the World."
+      },
+      "Qutub Minar": {
+        image: "image2.jpg",
+        description: "The Qutub Minar is a towering minaret in Delhi, a UNESCO World Heritage Site and a historical landmark."
+      },
+      "Gateway of India": {
+        image: "image3.jpg",
+        description: "The Gateway of India, located in Mumbai, is an iconic arch-monument built during the 20th century."
+      },
+      "Hawa Mahal": {
+        image: "image4.jpg",
+        description: "The Hawa Mahal, or 'Palace of Winds,' is a five-story palace in Jaipur, Rajasthan."
+      },
+      "Mysore Palace": {
+        image: "image5.jpg",
+        description: "Mysore Palace, located in Mysore, Karnataka, is a historical palace and royal residence."
+      },
+      "Charminar": {
+        image: "image6.jpg",
+        description: "Charminar, located in Hyderabad, Telangana, is a historic monument and mosque."
+      },
+      "Victoria Memorial": {
+        image: "image7.jpg",
+        description: "Victoria Memorial is a large marble building in Kolkata, West Bengal, dedicated to Queen Victoria."
+      },
+      "Red Fort": {
+        image: "image8.jpg",
+        description: "The Red Fort in Delhi is a historic fortification and a UNESCO World Heritage Site."
+      },
+      "Meenakshi Temple": {
+        image: "image9.jpg",
+        description: "The Meenakshi Temple, located in Madurai, Tamil Nadu, is a historic Hindu temple."
+      },
+      "Golden Temple": {
+        image: "image10.jpg",
+        description: "The Golden Temple, located in Amritsar, Punjab, is the holiest gurdwara and a place of pilgrimage."
+      },
+      "Lotus Temple": {
+        image: "image11.jpg",
+        description: "The Lotus Temple in Delhi is a Bahá'í House of Worship known for its flower-like shape."
+      },
+      "Ajanta Caves": {
+        image: "image12.jpg",
+        description: "The Ajanta Caves in Aurangabad, Maharashtra, are rock-cut Buddhist cave monuments."
+      }
+    };
+
+    if (placeDetails[place]) {
+      document.getElementById("place-image").src = placeDetails[place].image;
+      document.getElementById("place-name").innerText = place;
+      document.getElementById("place-description").innerText = placeDetails[place].description;
+    } else {
+      document.getElementById("place-name").innerText = "Place not found";
+      document.getElementById("place-description").innerText = "The details for the selected place are not available.";
+    }
+  </script>
+</body>
+</html>
